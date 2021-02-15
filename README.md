@@ -30,22 +30,35 @@ Right away we can identify some key points within our data.
 
 Addressing the first of these points, it is helpful to quantify what percentage of the data in he Age and Cabin columns is null
 
-![Image of datatypes of columns in training data](Images/training_data_percent_missing.PNG) ![Image of datatypes of columns in training data](Images/training_data_percent_missing_viz.PNG)
+![Image of missing data](Images/training_data_percent_missing.PNG) ![Image of missing data visualization](Images/training_data_percent_missing_viz.PNG)
 
 As shown above roughly 20% and 77% of the data is missing in the Age and Cabin columns respectively. When dealing with missing values the most common practices are to use filler data (imputation) or drop the missing data, which can lead to omission of the data all together depending on the amount missing. These will be considerations that are explored in the data manipulation step of this analysis.
 
 To get a better idea of how the data is distributed in the data set we can also look at how many of the passengers onboard the Titanic survived across the columns. 
 
-![Image of datatypes of columns in training data](Images/training_data_survived_distribution.PNG)
+![Survival data distribution](Images/training_data_survived_distribution.PNG)
 
 Just from looking at the pivot table we can see that there were some factors that appear to have a stronger correlations with survival rates than others.
 
 In order to dig a little deeper, we should look at the individual variables that we believe would impact a persons chances of surviving. First we will look at gender, as it is common practice to prioritize women and children in emergencies.
 
-![Image of datatypes of columns in training data](Images/training_data_gender_distribution.PNG)
+![Gender data survival distribution](Images/training_data_gender_distribution.PNG)
 
 As expected, it looks like women had much higher rates of survival than men did!
 
-Another factor that one can assume had a high impact on chances of surival is wealth. Luckily our dataset has good indicators for socioeconomic standing of individuals in the form of passenger class and Fare. 
+Another factor that one can assume had a high impact on chances of surival is wealth. Luckily our dataset has good indicators for socioeconomic standing of individuals in the form of passenger class and fare.
+
+![Pclass data survival distribution](Images/training_data_pclass_distribution.PNG)
+
+It is evident that 1st class passengers - those who are wealthier - had a much higher chance of suriving the Titanic disaster than their lower class counterparts.
+
+Seeing data distribution can be just as important as seeing how certain variables can correlate with survival rates in the exploratory data analysis portion. By seeing how data is distributed we can identify whether data is skewed and opens up certain avenues for altering data that may improve the performance of machine learning models later on.
+
+The two columns that we are examining are the Age and the Sibsp columns.
+
+![Training data age distribution](Images/training_data_age_distribution.PNG)
+
+![Training data Sibsp distribution](Images/training_data_sibsp_distribution.PNG)
+
 
 ## Analysis
