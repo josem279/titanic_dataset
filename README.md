@@ -60,5 +60,8 @@ The two columns that we are examining are the Age and the Sibsp columns.
 
 ![Training data Sibsp distribution](Images/training_data_sibsp_distribution.PNG)
 
+For a more interactive examinsation of the training data, I have linked my Tableau workbook below
+
+![Tableau dashboard image](Images/tableau_dashboard_1.PNG)
 
 ## Analysis
