@@ -55,23 +55,26 @@ As expected, it looks like women had much higher rates of survival than men did!
 
 Another factor that one can assume had a high impact on chances of surival is wealth. Luckily our dataset has good indicators for socioeconomic standing of individuals in the form of passenger class and fare.
 
+![Scatter plot of prices](images/price_distribution_by_class.PNG)
+
 ![Pclass data survival distribution](images/survivor_rate_by_Pclass.PNG)
 
 ![Pclass data survival distribution](images/Pclass_pivot.PNG)
 
-It is evident that 1st class passengers - those who are wealthier - had a much higher chance of suriving the Titanic disaster than their lower class counterparts.
+Based on these images, it is evident that 1st class passengers - those who are wealthier and paid more for their passage - had a much higher chance of suriving the Titanic disaster than their less fortunate counterparts.
 
 Furthermore, if we look at the correlation between the two variables, Sex and Pclass, we can see that combined they paint a much clearer picture on who was likelier to survive.
 
 ![Sex survivor count distribution](images/survivor_rate_by_sex.PNG)
 
-As mentioned earlier, age may also have an impact on who was prioritized as the Titanic was sinking. First we will look at how the Age data is distributed. By vizualizing this distribution, we can identify whether data is skewed and opens up certain avenues for altering data that may improve the performance of machine learning models later on.
+As previously mentioned, age may also have an impact on who was prioritized as the Titanic was sinking. First we will look at how the Age data is distributed. By vizualizing this distribution, we can identify whether data is skewed and opens up certain avenues for altering data that may improve the performance of machine learning models later on.
 
 ![Age Distribution](images/Age_distribution.PNG)
 
-Great! It looks as though the Age data follows a normal distribution. However, an even mose useful insight would be a look at survivor rates across the age spectrum. Due to the large variance in ages among the passengers of the Titanic, it would be more helpful if we are able to group these ages and see survival rates by the ranges.
+Great! It looks as though the Age data follows a normal distribution. However, an even mose useful insight would be a look at survivor rates across the age spectrum. Linking this factor to wealth we should be able to see whether these two variables are strongly correlated with a higher chance of survival. There is a problem with our data however, it would be impractical to look at the survival rate for every unique age in our data. Instead, what we can do is group the age into bins and see survival rates by the ranges. By binning ages into 10 year increments and adding the Pclass variable we are able to see the survival rates among men and women across ranges and wealth!
 
 ![Survivor percentages by age range](images/age_range_survival_rates.PNG)
+
 ![Age Boxplot](images/Age_boxplot.PNG)
 
 One way of getting an even distribution of these ages would be to identify the quartiles of the data.
