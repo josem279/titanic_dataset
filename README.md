@@ -75,11 +75,31 @@ Great! It looks as though the Age data follows a normal distribution. However, a
 
 ![Survivor percentages by age range](images/age_range_survival_rates.PNG)
 
+### **Data Manipulation**
+
+Knowing the details of our data allows us to scrub and alter it more for our uses. We begin by tackling the null value problems that exist in some columns.
+
+Although the ages of the passengers followed a normal distribution, the heatmap performed earlier demonstrated that there were a lot of passengers whose age was not disclosed, roughly 20% of the dataset. Though we could just drop the missing rows, losing 20% of the data seems impractical. An alternate solution is to give these missing values a default value, the analysis will use the median of the ages. Using a boxplot and examining the descriptive statistics of the age column lets us see the quartiles of ages.
+
+![Age Descriptive Stats](images/age_description.PNG)
+
 ![Age Boxplot](images/Age_boxplot.PNG)
 
-One way of getting an even distribution of these ages would be to identify the quartiles of the data.
+Our chart and statistics show that 28 is the median age. As such, this will be that value that will be used to fill the NaN values in the Age column.
 
-For a more interactive examinsation of the training data, I have linked my Tableau workbook below
+Unlike the Age column however, the Cabin column contains many more missing values, a whopping 97%. Data imputation here would be impractical as it would basically mean creating a whole new variable. For these reasons, we will drop the columns.
+
+Similarly, there is are very few values missing from the embarked column and so we will drop those rows as their absence should not have any significant impact on our models ability to predict survivability.
+
+As shown below in an updated heatmap these methods of data manipulation should solve the problem of missing data.
+
+![Updated heat map](images/no_nulls_heatmap.PNG)
+
+Another issue with our dataset is that it includes several non-numeric columns. Though these columns are important to understanding our data they are incompatible with machine learning models. The columns specifically in question are the PassengerId, Name, Ticket, Sex, Embarked, and Pclass columns. Again, we must choose how to alter the data for the best results in our machine models later. With that in mind our analyses assumes that the PassengerId, Name, and Ticket columns will not be relevant to our models ability to predict survivability; they will be dropped. On the other hand, the Sex, Embarked, Pclass and Age columns are categorical in nature and have been altered because we believe they are important. For these columns the "get_dummies" method is called from the Pandas library to convert all unique values into binary values.
+
+Although using the "get_dummies" method on the columns as they are may be fine for the majority, we must once again alter our Age column as it would be impractical to give all unique ages a binary value.
+
+For a more interactive examination of the training data, I have linked my Tableau workbook below
 
 ![Tableau dashboard image](images/tableau_dashboard_1.PNG)
 
