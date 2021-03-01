@@ -75,6 +75,10 @@ Great! It looks as though the Age data follows a normal distribution. However, a
 
 ![Survivor percentages by age range](images/age_range_survival_rates.PNG)
 
+For a more interactive examination of the training data, I have linked my Tableau workbook below
+
+![Tableau dashboard image](images/tableau_dashboard_1.PNG)
+
 ### **Data Manipulation**
 
 Knowing the details of our data allows us to scrub and alter it more for our uses. We begin by tackling the null value problems that exist in some columns.
@@ -97,10 +101,25 @@ As shown below in an updated heatmap these methods of data manipulation should s
 
 Another issue with our dataset is that it includes several non-numeric columns. Though these columns are important to understanding our data they are incompatible with machine learning models. The columns specifically in question are the PassengerId, Name, Ticket, Sex, Embarked, and Pclass columns. Again, we must choose how to alter the data for the best results in our machine models later. With that in mind our analyses assumes that the PassengerId, Name, and Ticket columns will not be relevant to our models ability to predict survivability; they will be dropped. On the other hand, the Sex, Embarked, Pclass and Age columns are categorical in nature and have been altered because we believe they are important. For these columns the "get_dummies" method is called from the Pandas library to convert all unique values into binary values.
 
-Although using the "get_dummies" method on the columns as they are may be fine for the majority, we must once again alter our Age column as it would be impractical to give all unique ages a binary value.
+Although using the "get_dummies" method on the columns as they are may be fine for the majority, we must once again alter our Age column as it would be impractical to give all unique ages a binary value. For this we performed the same binning technique as earlier before using the "get_dummies" method. This operation results in 10 unique columns with binary values indicating whether a passenger falls in the respective range.
 
-For a more interactive examination of the training data, I have linked my Tableau workbook below
+Now that all of the data is expressed through numeric values and compatible with machine learning models, the original columns that were duplicated into binary values must be dropped - the Sex, Embarked, Pclass, and Age. This is the final update to the training dataset prior to being tested.
 
-![Tableau dashboard image](images/tableau_dashboard_1.PNG)
+It is important to note, that although it was not demonstrated in our notebook the same data manipulation processes were performed on the testing data.
+
+### *Machine Learning Models*
+
+When creating the models in the analyses, we first split our training and testing data. In this case, the two sets were predetermined, nonetheless we must assign them to variables.
+
+![Splitting training and testing data](images/train_test_split.PNG)
+
+The three models chosen in the analyses are a logistic regression, a decision tree model, and the random forest classifier model as shown below.
+
+![Logistic regression model](images/log_regression.PNG)
+
+![Decision tree model](images/decision_tree.PNG)
+
+![Random forest model](images/random_forest.PNG)
 
 ## Analysis
+
