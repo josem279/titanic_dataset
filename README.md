@@ -121,5 +121,20 @@ The three models chosen in the analyses are a logistic regression, a decision tr
 
 ![Random forest model](images/random_forest.PNG)
 
+![Model score overview](images/model_scores.PNG)
+
 ## Analysis
 
+The results of our machine learning models showed a number of things. Starting from the beginning, we saw that the logistic regression model had a very high accuracy level, about 80% accuracy in predicting the likelehood of survival in the test dataset. Likewise, our Decision Tree and Random Forest Classifier models showed incredibly high accuracy rates, an identical 94.7% accuracy on both.
+
+The logistic regression model was run first in an attempt to see whether our earlier assumptions regarding which features (columns) had a high impact on a passenger's chance of survival. As shown below in a df showing the correlation coefficient of our variables and their impact on the outcome, the features more likely to increase the probability of survival had a higher positive correlation coefficient and vice versa. 
+
+![Correlation coefficients](images/correlation_coeffs.PNG)
+
+It seems that our assumptions from earlier were correct. The three features that determined a person's chance of survival the most were their age, sex, and wealth. In other words, children between the age ranges of 0 and 10, females, and first class passengers were the most likely to make it out alive. On the other hand men, people in the age range of 60 to 70, and 3rd class passengers were the least likely to have made it out alive.
+
+Though this analyses and our models were insightful, I do believe that the study could be improved. In general, I do not believe that the high accuracy scores reflected in the Decision Tree and Random Forest models were themselves truly accurate. These scores I believe may be inflated by overfitting and may indicate that our data needs to be further cleaned. On that basis, I believe that there were other methods of data manipulation that could have been implemented. For starters, the data imputation for the age of passengers could have been done better. Instead of imputing the median age of all passengers the analyses could have taken the median age by gender or by passenger class. A deeper look into the embarked column may have also provided more insight as it seems there was some correlation with where passengers boarded and who survived. My assumption is that certain sites were more specific to wealthier crowds. Though our analyses did not make use of the passenger's names, I believe that there may have been a way to determine if certain titles like "Mr" indicated a higher chance of survival as they may be informal signals of wealth. Finally, the last metric I would reincorporate in this analyses would be the fare column. As it is a measure of how much individuals paid for their passage, and we established that socioeconomic status was highly telling of an persons likelihood to survive, this metric may be extremely useful to feed into our machine learning models.
+
+## Resources
+
+https://www.kaggle.com/startupsci/titanic-data-science-solutions
