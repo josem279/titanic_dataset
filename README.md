@@ -137,4 +137,8 @@ Though this analyses and our models were insightful, I do believe that the study
 
 ## Resources
 
-https://www.kaggle.com/startupsci/titanic-data-science-solutions
+<https://www.kaggle.com/startupsci/titanic-data-science-solutions>
+
+<https://www.kaggle.com/kenjee/titanic-project-example>
+
+<https://www.youtube.com/watch?v=Ea_KAcdv1vs>
